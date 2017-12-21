@@ -32,6 +32,11 @@ host_acl = node['squid']['hosts']
 url_acl = node['squid']['urls']
 
 
+log 'message' do
+  message host_acl
+  level :warn
+end
+
 # Log variables to Chef::Log::debug()
 Chef::Log.debug("Squid listen_interface: #{listen_interface}")
 Chef::Log.debug("Squid ipaddress: #{ipaddress}")
